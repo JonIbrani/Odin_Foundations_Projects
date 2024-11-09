@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+.header_container_top{
+    background-color: 1f2937;
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+}
+    
+
+
+.header_container_top li{
+    list-style: none;
+    text-decoration: none;
+}
+
+#header_logo{
+    font-size: 24px;
+    color: F9FAF8;
+    font-family: "Roboto",sans-serif;
+    font: 700;
+    margin-right: 80px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* .square_header{
+    background-color: azure;
+}
+
+.quote_header{
+    background-color: e5e7eb;
+  
+}
+
+.sign_up_header{
+    background-color: 3882F6;
+    
+}
+
+.copyright{
+    background-color: 1f2937;
+    
+    
+}
+
+ */
