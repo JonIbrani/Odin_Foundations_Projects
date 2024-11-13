@@ -8,7 +8,7 @@ const square_width = canvas.clientWidth / 16;
 
 
 for(i=0; i<256; i++){
-    let square = document.createElement('div');
+    const square = document.createElement('div');
 
     square.style.backgroundColor = 'white'
     square.style.width = square_width+'px';
@@ -17,4 +17,9 @@ for(i=0; i<256; i++){
     canvas.appendChild(square)
 };
 
+const square = canvas.querySelectorAll('div')
 
+
+
+//change color function
+//event listener function
