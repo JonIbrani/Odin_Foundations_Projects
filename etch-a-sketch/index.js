@@ -14,12 +14,21 @@ for(i=0; i<256; i++){
     square.style.width = square_width+'px';
     square.style.height = square_height+'px';
     
-    canvas.appendChild(square)
-};
-
-const square = canvas.querySelectorAll('div')
+    canvas.appendChild(square);
+}
 
 
 
-//change color function
-//event listener function
+const square = canvas.querySelectorAll('div');
+const colors = ['red','blue','green','pink','orange','yellow','purple']
+
+
+function changeColor(process){
+    let color = Math.floor(Math.random() * colors.length);
+    process.target.style.backgroundColor = colors[color];
+}
+
+
+square.forEach(square =>{
+    square.addEventListener('mouseover',changeColor);
+})
