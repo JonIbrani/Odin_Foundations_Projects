@@ -87,6 +87,10 @@ document.addEventListener("DOMContentLoaded", function(){
         current_number.textContent = previous_value;
 
     })
+
+    decimal.addEventListener("click",function(){
+        add_decimal();
+    })
 })
 
 
@@ -116,7 +120,13 @@ function calculate(){
         previous_value /= current_value;
     }
 
-    previous_value = Math.round(previous_value*1000)/1000;
+
     current_value = current_value.toString();
     previous_value = previous_value.toString();
+}
+
+function add_decimal(){
+    if(!current_value.includes(".")){
+        current_value += ".";
+    }
 }
