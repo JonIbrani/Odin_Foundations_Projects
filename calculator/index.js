@@ -62,12 +62,25 @@ document.addEventListener("DOMContentLoaded", function(){
     numbers.forEach((numbers_b) => numbers_b.addEventListener('click', function(e){
         handlenum(e.target.textContent);
         current_number.textContent = current_value;
+    }))
 
+    operator.forEach((operator_b) => operator_b.addEventListener('click',function(e){
+        handleoperator(e.target.textContent);
+        previous_number.textContent = current_number.textContent + " " + operator_value;
+        current_number.textContent = current_value;
 
     }))
 })
 
 
 function handlenum(num){
-    current_value += num;
+    if(current_value.length<=4){
+        current_value += num;
+    }
+}
+
+function handleoperator(operator){
+    operator_value = operator;
+    previous_value = current_value;
+    current_value = ""
 }
