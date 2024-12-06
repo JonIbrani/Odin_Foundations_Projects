@@ -64,12 +64,29 @@ document.addEventListener("DOMContentLoaded", function(){
         current_number.textContent = current_value;
     }))
 
+
     operator.forEach((operator_b) => operator_b.addEventListener('click',function(e){
         handleoperator(e.target.textContent);
         previous_number.textContent = current_number.textContent + " " + operator_value;
         current_number.textContent = current_value;
 
     }))
+
+    clear.addEventListener("click", function(){
+        operator_value = "";
+        current_value = "";
+        previous_value = "";
+        
+        current_number.textContent = current_value;
+        previous_number.textContent = previous_value;
+    })
+
+    equal.addEventListener("click", function(){
+        calculate();
+        previous_number.textContent = "";
+        current_number.textContent = previous_value;
+
+    })
 })
 
 
@@ -83,4 +100,23 @@ function handleoperator(operator){
     operator_value = operator;
     previous_value = current_value;
     current_value = ""
+}
+
+function calculate(){
+    current_value = Number(current_value);
+    previous_value = Number(previous_value);
+
+    if (operator_value == "+"){
+        previous_value += current_value;
+    } else if (operator_value == "-"){
+        previous_value -= current_value;
+    } else if (operator_value == "*"){
+        previous_value *= current_value;
+    } else{
+        previous_value /= current_value;
+    }
+
+    previous_value = Math.round(previous_value*1000)/1000;
+    current_value = current_value.toString();
+    previous_value = previous_value.toString();
 }
