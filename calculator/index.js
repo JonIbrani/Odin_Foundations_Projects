@@ -46,14 +46,28 @@ for(i=0;i<10;i++){
 
 //Function Implementation
 
-
+let current_value = '';
+let previous_value = '';
+let operator_value = '';
  
 document.addEventListener("DOMContentLoaded", function(){
     let numbers = document.querySelectorAll('.numbers_b');
     let operator = document.querySelectorAll('.operator_b');
-    let clear = document.querySelector('clear_bt');
-    let equal = document.querySelector('equal_bt');
-    let decimal = document.querySelector('decimal_bt');
+    let clear = document.querySelector('#clear_bt');
+    let equal = document.querySelector('#equal_bt');
+    let decimal = document.querySelector('#decimal_bt');
+    let current_number = document.querySelector('#current_number');
+    let previous_number = document.querySelector('#previous_number');
+
+    numbers.forEach((numbers_b) => numbers_b.addEventListener('click', function(e){
+        handlenum(e.target.textContent);
+        current_number.textContent = current_value;
+
+
+    }))
 })
 
 
+function handlenum(num){
+    current_value += num;
+}
